@@ -1,0 +1,242 @@
+/* Prevent adjustments of font size after orientation changes.  */
+html {
+    -moz-text-size-adjust: none;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    height: 100%;
+  }
+  
+  /*---- apply a natural box layout model to all elements -------*/
+  * {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+  }
+
+  body {
+    height: 100%;
+    font-family: $defaultFont;
+    font-weight: $normalWeight;
+    color: $fontColor;
+  }
+
+  #headerWrapper {
+    background-color: $primaryColor;
+    color: $fontColor;
+  }
+
+  header{
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    padding: $gutter;
+    gap: 8px;
+    .logo img {
+      display: block;
+      height: 48px;
+    }
+    .phone {
+      font-size: 14px;
+      font-weight: $normalWeight;
+      color: $whiteColor;
+      text-decoration: none;
+      background: $secondaryColor;
+      padding: 4px 10px;
+      border-radius: 6px;
+    }
+  }
+
+  #theButton::before {
+    content: "\2630";
+  }
+
+  #theButton {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    padding: 0;
+    width: 44px;
+    height: 44px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+  }
+
+  #theNav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    li a {
+      color: $secondaryColor;
+      display: block;
+      padding: .75rem $gutter;
+      text-decoration: none;
+      border-bottom: 1px solid $primaryColor;
+    }
+    li.active a {
+      color: $whiteColor;
+      background-color: $accentColor;
+    }
+  }
+
+  #theButton.open::before {
+    content: "\2715";
+  }
+
+  #theNav {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows .5s ease-out;
+    ul {
+      overflow: hidden;
+    }
+  }
+  #theNav.open {
+    grid-template-rows: 1fr;
+  }
+
+  .parentHero {
+    position: relative;
+    img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    p{
+      position: absolute;
+      margin: 0;
+      background: linear-gradient(360deg,rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+      padding: 1rem;
+      bottom: 0;
+      width: 100%;
+      text-align: center;
+      color: $accentColor;
+      font-size: 2rem;
+    }
+  }
+
+  h1 {
+    margin: 0;
+    padding: 20px 0 0 20px;
+  }
+
+  .serviceCards {
+    padding: 0 $gutter;
+    section {
+      border: 2px solid $secondaryColor;
+      overflow: hidden;
+      margin: 1rem 0;
+      h2, p, img {
+        margin: 0;
+        padding: 1rem $gutter;
+      }
+      h2 {
+        background-color: $secondaryColor;
+        font-size: 1.5rem;
+        color: $whiteColor;
+        text-align: center;
+      }
+      p {
+        text-align: center;
+        font-size: 16px;
+      }
+      img {
+        display: block;
+        margin: 0 auto;
+        position: relative;
+      }
+      a {
+        display: block;
+        background-color: $accentColor;
+        padding: .75rem;
+        text-align: center;
+        margin: 0 3rem 1rem 3rem;
+        color: $whiteColor;
+        text-decoration: none;
+        font-weight: 700;
+      }
+    }
+  }
+
+  .bounce:hover img {animation: myBounce 1s 1;}
+  .pulse:hover img {animation: myPulse 1s 1;}
+  .poyoyon:hover img {animation: myPoyoyon 0.5s cubic-bezier(0.12, 0, 0.39, 0) 1 forwards;}
+  .spin:hover img {animation: mySpin 1s 1;}
+
+  @keyframes myBounce {
+    0% {bottom:0px; animation-timing-function: ease-out;}
+    25% {bottom:15px; animation-timing-function: ease-in;}
+    50% {bottom:0px; animation-timing-function: ease-out;}
+    75% {bottom:7px; animation-timing-function: ease-iin;}
+    100% {bottom:0px; animation-timing-function: ease-out;}
+  }
+
+  @keyframes myPulse {
+    0% {transform: scale(1.0);}
+    25% {transform: scale(1.5);}
+    50% {transform: scale(.75);}
+    75% {transform: scale(1.25);}
+    100% {transform: scale(1.0);}
+  }
+
+  @keyframes myPoyoyon {
+    0% {
+      transform: translateX(140px);
+      opacity: 0;
+    }
+    50% {
+      transform: translateX(0);
+    }
+    65% {
+      transform: translateX(30px);
+    }
+    100% {
+      transform: translateX(0);
+    }
+    20%,100% {
+      opacity: 1;
+    }
+  }
+
+  @keyframes mySpin {
+    from {transform: rotate(0deg);}
+    to {transform: rotate(360deg);}
+  } 
+
+  .reviewWrapper {
+    background-color: $primaryColor;
+    h2{
+      margin: 10;
+      padding: 20px 0 0 20px;
+    }
+  }
+
+  div#reviewCards {
+    section {
+      border: 2px solid $secondaryColor;
+      margin: 10px;
+      padding: 8px;
+      text-align: center;
+      background-color: $whiteColor;
+      h3{
+        font-size: 22px;
+        color: $fontColor;
+        font-weight: 700;
+      }
+      img {
+        width: 25px;
+      }
+    }
+  }
+
+  footer {
+    padding: 1rem $gutter;
+    background: $accentColor;
+    p {
+        margin: 0;
+        font-weight: $lightWeight;
+        text-align: center;
+        color: $whiteColor;
+    }
+}
