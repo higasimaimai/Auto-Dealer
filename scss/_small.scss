@@ -168,7 +168,7 @@ html {
     0% {bottom:0px; animation-timing-function: ease-out;}
     25% {bottom:15px; animation-timing-function: ease-in;}
     50% {bottom:0px; animation-timing-function: ease-out;}
-    75% {bottom:7px; animation-timing-function: ease-iin;}
+    75% {bottom:7px; animation-timing-function: ease-in;}
     100% {bottom:0px; animation-timing-function: ease-out;}
   }
 
@@ -207,7 +207,7 @@ html {
   .reviewWrapper {
     background-color: $primaryColor;
     h2{
-      margin: 10;
+      margin: 10px;
       padding: 20px 0 0 20px;
     }
   }

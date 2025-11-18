@@ -504,7 +504,7 @@ h1 {
   }
   75% {
     bottom: 7px;
-    animation-timing-function: ease-iin;
+    animation-timing-function: ease-in;
   }
   100% {
     bottom: 0px;
@@ -558,7 +558,7 @@ h1 {
   background-color: #A1B1C6;
 }
 .reviewWrapper h2 {
-  margin: 10;
+  margin: 10px;
   padding: 20px 0 0 20px;
 }
 
